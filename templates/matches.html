@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% for m in data %}
+    {% if m.match.state == 'open' %}
+    <p>{{m.match.id}}: {{m.match.player1_id}} vs {{m.match.player2_id}}</p>
+    {% endif %}
+    {% endfor %}
+
+    {{data}}
+</body>
+
+</html>

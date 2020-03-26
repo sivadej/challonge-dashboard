@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% for m in matches %}
+    {% if m.match.state == 'open' %}
+    <p>
+        <form method="POST">
+            <input type="hidden" name="_method" value="put" />
+            {{m.match.id}}: {{x[m.match.player1_id]}} <button
+                formaction="/report_win/{{m.match.id}}/{{m.match.player1_id}}/0">W2-0</button><button
+                formaction="/report_win/{{m.match.id}}/{{m.match.player1_id}}/1">W2-1</button> vs
+            {{x[m.match.player2_id]}}<button
+                formaction="/report_win/{{m.match.id}}/{{m.match.player2_id}}/0">W2-0</button><button
+                formaction="/report_win/{{m.match.id}}/{{m.match.player2_id}}/1">W2-1</button>
+        </form>
+    </p>
+    {% endif %}
+    {% endfor %}
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p> </p>
+    {{x}}
+</body>
+
+</html>
